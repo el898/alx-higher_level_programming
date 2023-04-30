@@ -8,12 +8,11 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialize a square.
-        
+
         Args:
             size (int): The size of the new square.
             position (tuple): The position of the new square.
         """
-
 
         self.__size = size
         self.__position = position
@@ -77,4 +76,3 @@ class Square:
             if i != self.__size - 1:
                 result += "\n"
         return result
-
