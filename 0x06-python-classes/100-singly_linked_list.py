@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """define class of a singly linked list"""
 
+
 class Node:
     """Represent a node in a singly-linked list."""
 
@@ -43,6 +44,7 @@ class Node:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
+
 class SinglyLinkedList:
     """Represent a singly-linked list."""
 
@@ -66,15 +68,16 @@ class SinglyLinkedList:
             self.__head = new_node
         else:
             current = self.__head
-            while current.next_node is not None and current.next_node.data < value:
+            while current.next_node is not None and \
+                    current.next_node.data < value:
                 current = current.next_node
             new_node.next_node = current.next_node
             current.next_node = new_node
 
     def __str__(self):
-        """Method to generate a string representation of the SinglyLinkedList object.
+        """Method to generate a string representation.
         Returns:
-            str: A string representation of the list with one node number per line.
+            str: A string representation of the list.
         """
         nodes = []
         current = self.__head
