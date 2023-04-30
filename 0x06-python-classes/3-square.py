@@ -11,7 +11,7 @@ class Square:
         Initialize a Square instance.
 
         Args:
-            size (int): The Default size is 0.            
+            size (int): The Default size is 0.
         """
 
         if not isinstance(size, int):
