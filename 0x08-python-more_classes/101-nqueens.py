@@ -11,7 +11,7 @@ if __name__ == "__main__":
         print("Usage: nqueens N")
         exit(1)
     try:
-    n = int(arguments[1])
+        n = int(arguments[1])
     except ValueError:
         n = ''
 
