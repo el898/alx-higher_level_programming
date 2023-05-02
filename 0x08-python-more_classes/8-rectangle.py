@@ -69,8 +69,9 @@ class Rectangle:
 
         if(rect_2.area() > rect_1.area()):
             return rect_2
-	return rect_2
-
+        
+        return rect_1
+    
     def __str__(self):
         """Return the printable representation of the Rectangle.
         print the rectangle with the character #.
