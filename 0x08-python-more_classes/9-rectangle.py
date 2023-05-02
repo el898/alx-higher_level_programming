@@ -76,7 +76,7 @@ class Rectangle:
     def square(cls, size=0):
         """Creates a square"""
         return cls(size, size)
-        
+
     def __str__(self):
         """Return the printable representation of the Rectangle.
         print the rectangle with the character #.
@@ -100,4 +100,3 @@ class Rectangle:
         """Print a message for deletion of a Rectangle."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
-
