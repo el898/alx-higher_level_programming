@@ -1,14 +1,5 @@
 #!/usr/bin/python3
-"""Unittest classes:
-    TestBase_instantiation - line 23
-    TestBase_to_json_string - line 110
-    TestBase_save_to_file - line 156
-    TestBase_from_json_string - line 234
-    TestBase_create - line 288
-    TestBase_load_from_file - line 340
-    TestBase_save_to_file_csv - line 406
-    TestBase_load_from_file_csv - line 484
-"""
+"""Unittest classes"""
 import os
 import unittest
 from models.base import Base
@@ -17,7 +8,7 @@ from models.square import Square
 
 
 class TestBase_instantiation(unittest.TestCase):
-    """Unittests for testing instantiation of the Base class."""
+    """Unittests for testing the Base class."""
 
     def test_no_arg(self):
         b1 = Base()
@@ -104,7 +95,7 @@ class TestBase_instantiation(unittest.TestCase):
 
 
 class TestBase_to_json_string(unittest.TestCase):
-    """Unittests for testing to_json_string method of Base class."""
+    """Unittests for testing to_json_string."""
 
     def test_to_json_string_rectangle_type(self):
         r = Rectangle(10, 7, 2, 8, 6)
@@ -150,11 +141,11 @@ class TestBase_to_json_string(unittest.TestCase):
 
 
 class TestBase_save_to_file(unittest.TestCase):
-    """Unittests for testing save_to_file method of Base class."""
+    """Unittests for testing save_to_file."""
 
     @classmethod
     def tearDown(self):
-        """Delete any created files."""
+        """Delete created files."""
         try:
             os.remove("Rectangle.json")
         except IOError:
@@ -228,7 +219,7 @@ class TestBase_save_to_file(unittest.TestCase):
 
 
 class TestBase_from_json_string(unittest.TestCase):
-    """Unittests for testing from_json_string method of Base class."""
+    """Unittests for testing"""
 
     def test_from_json_string_type(self):
         list_input = [{"id": 89, "width": 10, "height": 4}]
