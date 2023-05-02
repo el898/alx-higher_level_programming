@@ -5,4 +5,7 @@
 import sys
 
 if __name__ == "__main__":
-	exit(1)
+
+    arguments = sys.argv
+    if (len(arguments) != 2):
+        print("Usage: nqueens N\n")
