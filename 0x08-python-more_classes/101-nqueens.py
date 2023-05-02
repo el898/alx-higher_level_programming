@@ -10,7 +10,7 @@ if __name__ == "__main__":
     if (len(arguments) != 2):
         print("Usage: nqueens N")
         exit(1)
-    try
+    try:
     n = int(arguments[1])
     except ValueError:
         n = ''
