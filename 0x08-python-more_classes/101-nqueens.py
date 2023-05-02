@@ -10,8 +10,11 @@ if __name__ == "__main__":
     if (len(arguments) != 2):
         print("Usage: nqueens N")
         exit(1)
+    try
+    n = int(arguments[1])
+    except ValueError:
+        n = ''
 
-    n = arguments[1]
     if (not isinstance(n, int)):
         print("N must be a number")
         exit(1)
