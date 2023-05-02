@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-''' a class Student that defines a student
-'''
+''' a class Student that defines a student'''
 
 
 class Student:
-    '''module class student
-    '''
+    '''etrieves a dictionary representation of a Student'''
 
     def __init__(self, first_name, last_name, age):
         '''method __init__
@@ -15,6 +13,5 @@ class Student:
         self.age = age
 
     def to_json(self):
-        '''method to_json
-        '''
+        '''public method to_json'''
         return self.__dict__
