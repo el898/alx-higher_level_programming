@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-"""A Rectangle Class"""
+ectangle Class"""
 
 
 class Rectangle:
