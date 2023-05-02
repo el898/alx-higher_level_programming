@@ -23,43 +23,75 @@ if __name__ == "__main__":
         print("N must be at least 4")
         exit(1)
 
-    # initialize the answer list
-    for i in range(n):
-        a.append([i, None])
+    solution_list = []
+    n_arr = [[0]*n for _ in range(n)]
 
-    def already_exists(y):
-        """check that a queen does not already exist in that y value"""
-        for x in range(n):
-            if y == a[x][1]:
-                return True
-        return False
-
-    def reject(x, y):
-        """determines whether or not to reject the solution"""
-        if (already_exists(y)):
+    def can_place(i, j):
+        # if position has already been filled
+        if (n_arr[i][j] == 1):
             return False
-        i = 0
-        while (i < x):
-            if abs(a[i][1] - y) == abs(i - x):
-                return False
-            i += 1
+
+        if under_attack(i, j):
+            return False
+
         return True
 
-    def clear_a(x):
-        """clears the answers from the point of failure on"""
-        for i in range(x, n):
-            a[i][1] = None
+    def under_attack(i, j):
+        # check row
+        if 1 in n_arr[i]:
+            return True
 
-    def nqueens(x):
-        """recursive backtracking function to find the solution"""
-        for y in range(n):
-            clear_a(x)
-            if reject(x, y):
-                a[x][1] = y
-                if (x == n - 1):  # accepts the solution
-                    print(a)
-                else:
-                    nqueens(x + 1)  # moves on to next x value to continue
+        # check column
+        for k in range(n):
+            if n_arr[k][j] == 1:
+                return True
 
-    # start the recursive process at x = 0
+        # check diagonals
+        ct = 1
+        for m in range(i-1, -1, -1):
+            if i < 0:
+                break
+
+            if (j-ct >= 0 and n_arr[m][j-ct] == 1):
+                return True
+            if (j+ct < n and n_arr[m][j+ct] == 1):
+                return True
+
+            ct += 1
+
+        ct = 1
+        for m in range(i+1, n):
+            if i < 0:
+                break
+
+            if (j-ct >= 0 and n_arr[m][j-ct] == 1):
+                return True
+            if (j+ct < n and n_arr[m][j+ct] == 1):
+                return True
+            ct += 1
+
+        return False
+
+    def print_final_result():
+        # print solutions
+        for s in solution_list:
+            final_solution = []
+            for i in range(n):
+                for j in range(n):
+                    if (s[i][j] == 1):
+                        final_solution.append([i, j])
+            print(final_solution)
+
+    def nqueens(i):
+        if i == n:
+            solution_list.append([list(i) for i in n_arr])
+            return True
+
+        for j in range(n):
+            if can_place(i, j):
+                n_arr[i][j] = 1
+                nqueens(i+1)
+                n_arr[i][j] = 0
+
     nqueens(0)
+    print_final_result()
