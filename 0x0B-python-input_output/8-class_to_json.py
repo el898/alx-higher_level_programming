@@ -1,10 +1,7 @@
 #!/usr/bin/python3
-'''function that returns the dictionary description with simple data structure
-'''
+'''function that returns the dictionary description'''
 
 
 def class_to_json(obj):
-    '''module class_to_json
-       returns builds a dictionary
-    '''
+    '''returns description with simple data structure'''
     return obj.__dict__
