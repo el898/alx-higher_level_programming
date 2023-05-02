@@ -12,7 +12,6 @@ class Square:
 
         Args:
             size (int): The Default size is 0.
-            
         """
 
         if not isinstance(size, int):
@@ -25,4 +24,3 @@ class Square:
         """Returns:The area of the square."""
 
         return (self.__size ** 2)
-
