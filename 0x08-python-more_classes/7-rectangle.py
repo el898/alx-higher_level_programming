@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A Rectangle Class"""
 
+
 class Rectangle:
     """Represent a rectangle.
     Attributes:
@@ -81,4 +82,6 @@ class Rectangle:
         """Print a message for deletion of a Rectangle."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
+
+
 
