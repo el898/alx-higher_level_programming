@@ -1,7 +1,6 @@
--- Creates a table with a constraint on a column to have a unique value
--- for each row, which is never empty when a value isn't given
+-- Creates a table  unique_id
 CREATE TABLE IF NOT EXISTS unique_id(
     id INT DEFAULT 1,
     name VARCHAR(256),
     UNIQUE(id)
-);
+)
