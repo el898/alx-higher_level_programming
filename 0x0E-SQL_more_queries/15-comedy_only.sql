@@ -1,5 +1,4 @@
-
--- Prints and joins records from two tables with a matching field
+-- t lists all Comedy shows in the database hbtn_0d_tvshows.
 SELECT tv_shows.title
     FROM tv_shows
     RIGHT JOIN tv_show_genres
