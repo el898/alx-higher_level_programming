@@ -1,5 +1,4 @@
--- Prints records with column values in a set formed
--- from the intersection of multiple tables
+-- uses the hbtn_0d_tvshows database to list all genres not linked to the show Dexter
 SELECT DISTINCT name
     FROM tv_genres
     WHERE name NOT IN
