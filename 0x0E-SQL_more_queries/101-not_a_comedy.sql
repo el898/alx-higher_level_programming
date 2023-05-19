@@ -1,5 +1,4 @@
--- Prints records with column values in a set formed
--- from the intersection of multiple tables
+-- lists all shows without the genre Comedy in the database hbtn_0d_tvshows
 SELECT DISTINCT title
     FROM tv_shows
     WHERE title NOT IN
