@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-python script that  takes in a URL and an email
+a Python script that fetches https://alx-intranet.hbtn.io/status
 """
 
 
